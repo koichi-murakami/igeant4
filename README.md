@@ -1,1 +1,1 @@
-# Geant4 kernel for Jupytor
+# Geant4 kernel for Jupyter
