@@ -22,7 +22,7 @@ def ping() :
   poller.register(socket, zmq.POLLIN)
   if poller.poll(1*1000) :
     output = socket.recv()
-    print ("@@ G4ZMQ server connected.")
+    print ("@@ G4ZMQ server connected.\n")
   else :
     raise ConnectionError("*** connection timeout")
 
@@ -109,5 +109,3 @@ def exit() :
 # ===============================================================
 if __name__ == '__main__' :
   pass
-else :
-  connect()
