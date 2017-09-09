@@ -35,5 +35,6 @@
 build/
 *zzz/
 __pycache__/
+*.ipynb_*/
 
 
