@@ -1,7 +1,7 @@
 # Geant4 kernel for Jupyter
 
 [![release](https://img.shields.io/github/release/koichi-murakami/igeant4.svg)](https://github.com/koichi-murakami/igeant4/releases)
-[![anaconda3](https://img.shields.io/badge/4.4.0-green.svg?style=flat-square)](https://docs.continuum.io/)
+[![anaconda3](https://img.shields.io/badge/anaconda3-4.4.0-green.svg)](https://docs.continuum.io/)
 [![license](https://img.shields.io/github/license/koichi-murakami/igeant4.svg)](LICENSE)
 
 Copyright (c) 2017, Koichi Murakami
