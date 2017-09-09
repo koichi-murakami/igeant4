@@ -1,8 +1,8 @@
 # Geant4 kernel for Jupyter
 
-[![release](https://img.shields.io/github/release/koichi-murakami/zmq-geant4.svg)](https://github.com/koichi-murakami/zmq-geant4/releases)
-[![geant4](https://img.shields.io/badge/geant4-10.3-green.svg?style=flat-square)](http://www.geant4.org/)
-[![license](https://img.shields.io/github/license/koichi-murakami/zmq-geant4.svg)](LICENSE)
+[![release](https://img.shields.io/github/release/koichi-murakami/igeant4.svg)](https://github.com/koichi-murakami/igeant4/releases)
+[![anaconda3](https://img.shields.io/badge/4.4.0-green.svg?style=flat-square)](https://docs.continuum.io/)
+[![license](https://img.shields.io/github/license/koichi-murakami/igeant4.svg)](LICENSE)
 
 Copyright (c) 2017, Koichi Murakami
 
