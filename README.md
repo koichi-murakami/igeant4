@@ -1,7 +1,7 @@
 # A Geant4 UI kernel for Jupyter
 
 [![release](https://img.shields.io/github/release/koichi-murakami/igeant4.svg)](https://github.com/koichi-murakami/igeant4/releases)
-[![python2](https://img.shields.io/badge/python2-outage-red.svg)](https://www.python.org/)
+[![python2](https://img.shields.io/badge/python2-NO-red.svg)](https://www.python.org/)
 [![anaconda](https://img.shields.io/badge/anaconda-4.4.0-green.svg)](https://docs.continuum.io/)
 [![license](https://img.shields.io/github/license/koichi-murakami/igeant4.svg)](LICENSE)
 
