@@ -5,13 +5,14 @@
 # ==================================================================
 from ipykernel.kernelbase import Kernel
 import g4zmq
+import subprocess
 
 class Geant4(Kernel):
   implementation = 'Geant4'
   implementation_version = '1.0'
-  language = 'g4ui'
+  language = 'geant4'
   language_version = '1.0'
-  language_info = {'name': 'shell', 'mimetype': 'text/plain'}
+  language_info = {'name': 'shell', 'mimetype': 'application/x-shell-session'}
   banner ="""
  #####   #######     #     #     #  #######  #   #
 #     #  #          # #    ##    #     #     #   #
@@ -20,15 +21,45 @@ class Geant4(Kernel):
 #     #  #        #######  #   # #     #         #
 #     #  #        #     #  #    ##     #         #
  #####   #######  #     #  #     #     #         #
+
+Geant4 Jupyter kernel 1.0 -- Jupyter frontend for Geant4 UI
+Geant4 UI commands  -> Execute UI commands
+pwd/cwd/cd/ls/lc    -> move/show UI command tree
+?command            -> Show a current value if possible
+#message            -> Echo message
+help command        -> Details about commands
+command?            -> Same as help
+%shell              -> Shell command
+%connect            -> Connet to G4ZMQ server
 """
+  __connected = False
+  __magic = [ "%shell", "%connect"]
 
   # -----------------------------------------------------------------
   def do_execute(self, code, silent, store_history=True,
                  user_expressions=None, allow_stdin=False) :
     cmd = code.strip()
+    output = ""
+
     if not silent:
-      output = ""
-      if cmd == "pwd" :
+      if cmd.startswith("%shell") :
+        arg = cmd.replace('%shell', '', 1)
+        try :
+          subprocess.Popen(arg.strip())
+        except :
+          print ("@@ shell command error")
+
+      elif cmd.startswith("%connect") :
+        try :
+          g4zmq.connect()
+          self.__connected = True
+        except :
+          print ("@@ g4zmq connection error")
+
+      elif not self.__connected :
+        print ("@@ invalid input")
+
+      elif cmd == "pwd" :
         output = g4zmq.pwd()
 
       elif cmd == "cwd" :
@@ -40,18 +71,17 @@ class Geant4(Kernel):
 
       elif cmd.startswith("ls") :
         arg = cmd.replace('ls', '', 1)
-        output = g4zmq.ls()
+        output = g4zmq.ls(arg)
 
       elif cmd.startswith("lc") :
         arg = cmd.replace('lc', '', 1)
         output = g4zmq.lc(arg)
 
       elif cmd.startswith("#") :
-        arg = cmd.replace('#', '', 1)
-        output = g4zmq.echo(arg)
+        output = g4zmq.echo(cmd[1:])
 
       elif cmd.endswith("?") :
-        self.do_inspect(code, 0)
+        output = g4zmq.help(cmd[:-1])
 
       else:
         output = g4zmq.apply(cmd)
@@ -69,6 +99,14 @@ class Geant4(Kernel):
   def do_complete(self, code, cursor_pos) :
     first_c = code[0]
     typed = code[:cursor_pos]
+
+    if not self.__connected :
+      return { 'status': 'ok',
+                'matches': [c for c in self.__magic if c.startswith(typed)],
+                'cursor_start' : 0,
+                'cursor_end' : cursor_pos,
+                'metadata':{}
+              }
 
     if first_c == '/' :
       cmd_list = g4zmq.get_fullcommand_tree()
@@ -127,21 +165,12 @@ class Geant4(Kernel):
               }
 
   # -----------------------------------------------------------------
-  def do_inspect(self, code, cursor_pos, detail_level=0) :
-    print ("AAAAAAAAAAAAAAAAAAAAAaa")
-    return { 'status': 'ok',
-             'found': True,
-             'data': {'hoge':'fuga', 'aa':'123'},
-             'metadata': {}
-            }
-
-  # -----------------------------------------------------------------
   def do_shutdown(self, restart) :
-    #g4zmq.exit()
+    if self.__connected :
+      g4zmq.exit()
     return { 'restart': False }
 
 # ==================================================================
 if __name__ == '__main__':
   from ipykernel.kernelapp import IPKernelApp
   IPKernelApp.launch_instance(kernel_class=Geant4)
-  g4zmq.connect()
