@@ -1,4 +1,4 @@
-# Geant4 kernel for Jupyter
+# A Geant4 kernel for Jupyter
 
 [![release](https://img.shields.io/github/release/koichi-murakami/igeant4.svg)](https://github.com/koichi-murakami/igeant4/releases)
 [![anaconda3](https://img.shields.io/badge/anaconda3-4.4.0-green.svg)](https://docs.continuum.io/)
@@ -6,12 +6,7 @@
 
 Copyright (c) 2017, Koichi Murakami
 
-zmq-geant4 is a [ZeroMQ](http://zeromq.org/) interface with Geant4,
-that is an alternative implementation of Geant4 UI session.
-The interface is designed for the purpose of Geant4 kernel
-for [Jupyter](http://jupyter.org/).
-A Jupyter kernel is provided by
-[igeant4](https://github.com/koichi-murakami/igeant4) repository.
+A Geant4 kernel for [Jupyter](http://jupyter.org/). Geant4 UI commands can be used in Jupyter frontend using this kernel.
 
 * [Releases](https://github.com/koichi-murakami/igeant4/releases)
 * [Install Instructions](https://github.com/koichi-murakami/igeant4/wiki/Installation)
