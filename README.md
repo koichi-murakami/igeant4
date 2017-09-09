@@ -13,9 +13,9 @@ for [Jupyter](http://jupyter.org/).
 A Jupyter kernel is provided by
 [igeant4](https://github.com/koichi-murakami/igeant4) repository.
 
-* [Releases](https://github.com/koichi-murakami/zmq-geant4/releases)
-* [Install Instructions](https://github.com/koichi-murakami/zmq-geant4/wiki/Installation)
-* [Issues](https://github.com/koichi-murakami/zmq-geant4/issues)
+* [Releases](https://github.com/koichi-murakami/igeant4/releases)
+* [Install Instructions](https://github.com/koichi-murakami/igeant4/wiki/Installation)
+* [Issues](https://github.com/koichi-murakami/igeant4/issues)
 
 ## License
 BSD 2-Clause License
