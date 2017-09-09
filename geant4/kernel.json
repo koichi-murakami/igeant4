@@ -1,0 +1,5 @@
+{
+  "display_name":"Geant4",
+  "argv": ["python3","-m","g4kernel", "-f", "{connection_file}"],
+  "language" : "geant4"
+}
