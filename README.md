@@ -6,7 +6,7 @@
 
 Copyright (c) 2017, Koichi Murakami
 
-A Geant4 kernel for [Jupyter](http://jupyter.org/). Geant4 UI commands can be used in a Jupyter frontend using this kernel.
+A Geant4 UI kernel for [Jupyter](http://jupyter.org/). Geant4 UI commands can be used in a Jupyter frontend using this kernel.
 
 * [Releases](https://github.com/koichi-murakami/igeant4/releases)
 * [Install Instructions](https://github.com/koichi-murakami/igeant4/wiki/Installation)
