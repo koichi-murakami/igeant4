@@ -8,7 +8,7 @@ Copyright (c) 2017, Koichi Murakami
 
 A Geant4 UI kernel for [Jupyter](http://jupyter.org/). Geant4 UI commands can be used in a Jupyter frontend using this kernel.
 
-This kernel requires [Geant4 ZMQ interface](https://github.com/koichi-murakami/zmq-geant4) to communicate Geant4.
+This kernel requires [Geant4 ZMQ interface](https://github.com/koichi-murakami/zmq-geant4) to communicate with Geant4.
 
 * [Releases](https://github.com/koichi-murakami/igeant4/releases)
 * [Install Instructions](https://github.com/koichi-murakami/igeant4/wiki/Installation)
