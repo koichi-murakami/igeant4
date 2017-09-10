@@ -11,4 +11,5 @@ See the License for more information.
 
 if __name__ == '__main__' :
   from ipykernel.kernelapp import IPKernelApp
+  from .g4kernel import Geant4
   IPKernelApp.launch_instance(kernel_class=Geant4)
