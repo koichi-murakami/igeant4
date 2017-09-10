@@ -1,4 +1,4 @@
-# A Geant4 UI kernel for Jupyter
+# IGeant4 : A Geant4 UI kernel for Jupyter
 
 [![release](https://img.shields.io/github/release/koichi-murakami/igeant4.svg)](https://github.com/koichi-murakami/igeant4/releases)
 [![python2](https://img.shields.io/badge/python2-NO-red.svg)](https://www.python.org/)
