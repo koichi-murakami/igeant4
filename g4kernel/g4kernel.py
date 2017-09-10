@@ -14,7 +14,7 @@ See the License for more information.
 # *** Python3 ***
 # ==================================================================
 from ipykernel.kernelbase import Kernel
-import g4zmq
+from . import g4zmq
 import subprocess
 
 class Geant4(Kernel):
